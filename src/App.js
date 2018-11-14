@@ -7,12 +7,12 @@ import { useLogs, useHosts } from 'hooks';
 
 export const HostContext = React.createContext();
 const HostResource = createResource(() =>
-  fetch('/.netlify/functions/hosts').then(res => res.json())
+  fetch('http://localhost:4000/hosts').then(res => res.json())
 );
 
 export const AreaContext = React.createContext();
 const AreaResource = createResource(() =>
-  fetch('/.netlify/functions/areas').then(res => res.json())
+  fetch('http://localhost:4000/areas').then(res => res.json())
 );
 
 export const LogContext = React.createContext();
