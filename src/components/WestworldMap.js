@@ -2,12 +2,11 @@ import React from 'react';
 import { Segment } from 'semantic-ui-react';
 
 import Area from 'components/Area';
-import { HostContext, AreaContext } from 'App';
+import { HostContext, AreaResource } from 'App';
 
 const WestworldMap = () => {
   const { activeHosts } = React.useContext(HostContext);
-  const allAreas = React.useContext(AreaContext);
-  console.log({ allAreas });
+  const allAreas = AreaResource.read();
   return (
     <Segment id="map">
       {allAreas &&

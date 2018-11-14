@@ -10,7 +10,7 @@ import {
 } from 'semantic-ui-react';
 import { clean } from 'utils';
 
-import { HostContext, AreaContext } from 'App';
+import { HostContext, AreaResource } from 'App';
 import { LogContext } from 'App';
 
 const HostInfo = () => {
@@ -29,7 +29,7 @@ const HostInfo = () => {
     logNotify(`${selectedHost.firstName} set in area ${clean(value)}`);
   };
 
-  const allAreas = React.useContext(AreaContext);
+  const allAreas = AreaResource.read();
   const options = allAreas.map(area => ({
     key: area.name,
     value: area.name,
