@@ -8,8 +8,7 @@
 
 # production
 /build
-/built-lambda/areas.js
-/built-lambda/hosts.js
+/built-lambda
 
 # misc
 .DS_Store
