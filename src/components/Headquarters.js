@@ -1,32 +1,23 @@
-import React, { Component } from 'react';
+import React from 'react';
 import { Grid } from 'semantic-ui-react';
-import Details from './Details'
+import Details from './Details';
+import LogPanel from './LogPanel';
+import ColdStorage from './ColdStorage';
 
-
-class Headquarters extends Component {
-  // Remember, there's many ways to do this. This doesn't have to be a class component. It's up to you.
-
-
-  render(){
-    return(
-      <Grid celled='internally'>
-        <Grid.Column width={8}>
-
-        {/* Something goes here.... */}
-
-        </Grid.Column>
-        <Grid.Column width={5}>
-          <Details />
-        </Grid.Column>
-        <Grid.Column width={3}>
-
-        {/* and here. Take visual cues from the screenshot/video in the Readme. */}
-
-        </Grid.Column>
-      </Grid>
-    )
-  }
+function Headquarters() {
+  return (
+    <Grid celled="internally">
+      <Grid.Column width={8}>
+        <ColdStorage />
+      </Grid.Column>
+      <Grid.Column width={5}>
+        <Details />
+      </Grid.Column>
+      <Grid.Column width={3}>
+        <LogPanel />
+      </Grid.Column>
+    </Grid>
+  );
 }
-
 
 export default Headquarters;

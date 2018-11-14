@@ -1,17 +1,17 @@
 import React from 'react';
-import { Card } from 'semantic-ui-react'
+import { Card } from 'semantic-ui-react';
+import { HostContext } from 'App';
 
-const Host = () => {
-
-  return(
+const Host = ({ host }) => {
+  const { selectedHost, setSelectedHost } = React.useContext(HostContext);
+  return (
     <Card
-      className="host selected"
-      {/* Remove the "selected" portion of the className above to see what happens to the host. */}
-      onClick={ /* On Click what? */}
-      image={/* I wonder what goes here...*/}
+      className={`host ${selectedHost && selectedHost.id === host.id ? 'selected' : ''}`}
+      onClick={() => setSelectedHost(host)}
+      image={host.imageUrl}
       raised
     />
-  )
-}
+  );
+};
 
-export default Host
+export default Host;
